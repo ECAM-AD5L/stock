@@ -1,0 +1,21 @@
+version: '2'
+services:
+    mongo:
+        image: mongo
+        restart: always
+        ports:
+            - "27017:27017"
+
+    api:
+        build: .
+        ports:
+            - "80:8080"
+        depends_on:
+            - mongo
+        links:
+            - mongo
+        environment:
+            DEBUG: "true"
+            PORT: '8080'
+            DB_NAME: 'ecam'
+            MONGO_URL: 'mongodb://mongo:27017/ecam'
