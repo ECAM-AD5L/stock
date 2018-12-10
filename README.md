@@ -1,11 +1,11 @@
-# ECAM Project - Order service
+# ECAM Project - Stock service
 
 ## Build Dockerfile
 ```bash
-docker build -t ecam-order .
+docker build -t ecam-stock .
 ```
 
 ## Run the project
 ```bash
-docker run -d --name ecam-order ecam-order
+docker run -d --name ecam-stock ecam-stock
 ```

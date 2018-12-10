@@ -2,7 +2,7 @@
 # BUILD STAGE
 # 
 FROM golang:latest as build_base
-WORKDIR /order
+WORKDIR /stock
 
 # Force the go compiler to use modules
 ENV GO111MODULE=on
@@ -41,5 +41,5 @@ FROM scratch AS prod
 # Copy the CA certificate from the certs stage
 COPY --from=certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 # Copy the binary built during the build stage
-COPY --from=app_builder /order/order .
-CMD ["./order"]
+COPY --from=app_builder /stock/stock .
+CMD ["./stock"]

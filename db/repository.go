@@ -2,20 +2,18 @@ package db
 
 import (
 	"context"
-	"order/schema"
+	"stock/schema"
 )
 
 type Repository interface {
 	//OK
-	CreateOrder(ctx context.Context, order *schema.Order) error
-
-	ListOrderByCustomerID(ctx context.Context, id string) ([]*schema.Order, error)
+	CreateStock(ctx context.Context, stock *schema.Stock) error
 
 	//OK
-	GetOrder(ctx context.Context, id string) (*schema.Order, error)
+	ModifyStock(ctx context.Context, id string, quantity int) error
 
 	//OK
-	GetOrders(ctx context.Context) ([]*schema.Order, error)
+	GetStock(ctx context.Context, id string) (*schema.Stock, error)
 }
 
 var impl Repository
@@ -24,18 +22,14 @@ func SetRepository(repository Repository) {
 	impl = repository
 }
 
-func CreateOrder(ctx context.Context, order *schema.Order) error {
-	return impl.CreateOrder(ctx, order)
+func CreateStock(ctx context.Context, stock *schema.Stock) error {
+	return impl.CreateStock(ctx, stock)
 }
 
-func ListOrderByCustomerID(ctx context.Context, id string) ([]*schema.Order, error) {
-	return impl.ListOrderByCustomerID(ctx, id)
+func ModifyStock(ctx context.Context, id string, quantity int) error {
+	return impl.ModifyStock(ctx, id, quantity)
 }
 
-func GetOrder(ctx context.Context, id string) (*schema.Order, error) {
-	return impl.GetOrder(ctx, id)
-}
-
-func GetOrders(ctx context.Context) ([]*schema.Order, error) {
-	return impl.GetOrders(ctx)
+func GetStock(ctx context.Context, id string) (*schema.Stock, error) {
+	return impl.GetStock(ctx, id)
 }

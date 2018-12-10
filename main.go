@@ -3,10 +3,8 @@ package main
 import (
 	"fmt"
 	"log"
-	"order/db"
-	"order/service"
-
-	//"order/event"
+	"stock/db"
+	"stock/service"
 )
 
 func main() {

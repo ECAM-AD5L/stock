@@ -1,4 +1,4 @@
-module order
+module stock
 
 require (
 	github.com/go-stack/stack v1.8.0 // indirect
@@ -6,6 +6,8 @@ require (
 	github.com/gorilla/handlers v1.4.0
 	github.com/gorilla/mux v1.6.2
 	github.com/mongodb/mongo-go-driver v0.1.0
+	github.com/nats-io/go-nats v1.6.0
+	github.com/nats-io/nuid v1.0.0 // indirect
 	github.com/xdg/scram v0.0.0-20180814205039-7eeb5667e42c // indirect
 	github.com/xdg/stringprep v1.0.0 // indirect
 	golang.org/x/crypto v0.0.0-20181203042331-505ab145d0a9 // indirect

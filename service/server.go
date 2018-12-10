@@ -3,12 +3,13 @@ package service
 import (
 	"context"
 	"fmt"
-	"github.com/gorilla/handlers"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/gorilla/handlers"
 )
 
 func StartAPIServer() {
@@ -47,4 +48,3 @@ func waitForShutdown(apiServer *http.Server) {
 	apiServer.Shutdown(context.Background())
 	fmt.Println("API server shutdown complete")
 }
-
